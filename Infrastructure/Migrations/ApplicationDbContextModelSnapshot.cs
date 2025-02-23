@@ -36,6 +36,18 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Tech Corp"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Innovate Ltd"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Contact", b =>
@@ -63,6 +75,29 @@ namespace Infrastructure.Migrations
                     b.HasIndex("CountryId");
 
                     b.ToTable("Contacts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CompanyId = 1,
+                            CountryId = 1,
+                            Name = "John Doe"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CompanyId = 2,
+                            CountryId = 2,
+                            Name = "Alice Smith"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CompanyId = 1,
+                            CountryId = 1,
+                            Name = "Bob Johnson"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Country", b =>
@@ -80,6 +115,23 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Countries");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "USA"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Canada"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Germany"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Contact", b =>
