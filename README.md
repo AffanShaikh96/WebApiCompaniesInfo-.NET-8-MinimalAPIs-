@@ -29,7 +29,7 @@ YourSolution/
 - **FluentValidation** (Data Validation)
 - **JWT Authentication** (Security)
 - **xUnit & Moq** (Unit Testing)
-- **Serilog** (Logging)
+- **Microsoft Built-In Logging** (Logging)
 
 ## **🔹 Database Models & Relationships**
 - **Company** (1:M) **Contact** → One company has multiple contacts.
@@ -100,12 +100,9 @@ YourSolution/
 ## **📌 Running the Project**
 ### **1️⃣ Setup & Run Migration**
 ```bash
-# Install EF Core CLI if not installed
-dotnet tool install --global dotnet-ef
-
-# Run Migrations
-dotnet ef migrations add InitialCreate --project Infrastructure --startup-project API
-dotnet ef database update --project Infrastructure --startup-project API
+# Run Migrations in Visual Studio package manager console by selecting Infrastruce project from Default Project dropdown.
+Add-Migration InitialCreate
+Update-database
 ```
 
 ## **📌 Unit Testing**
